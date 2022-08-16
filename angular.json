@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "coding-challenge": "apps/coding-challenge",
+    "coding-challenge-e2e": "apps/coding-challenge-e2e"
+  }
+}

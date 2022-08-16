@@ -1,0 +1,93 @@
+{
+  "projectType": "application",
+  "sourceRoot": "apps/coding-challenge/src",
+  "prefix": "coding-challenge",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/coding-challenge",
+        "index": "apps/coding-challenge/src/index.html",
+        "main": "apps/coding-challenge/src/main.ts",
+        "polyfills": "apps/coding-challenge/src/polyfills.ts",
+        "tsConfig": "apps/coding-challenge/tsconfig.app.json",
+        "inlineStyleLanguage": "less",
+        "assets": [
+          "apps/coding-challenge/src/favicon.ico",
+          "apps/coding-challenge/src/assets"
+        ],
+        "styles": ["apps/coding-challenge/src/styles.less"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/coding-challenge/src/environments/environment.ts",
+              "with": "apps/coding-challenge/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "coding-challenge:build:production"
+        },
+        "development": {
+          "browserTarget": "coding-challenge:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "coding-challenge:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/coding-challenge/**/*.ts",
+          "apps/coding-challenge/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/coding-challenge"],
+      "options": {
+        "jestConfig": "apps/coding-challenge/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
