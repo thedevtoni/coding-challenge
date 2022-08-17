@@ -1,1 +1,99 @@
-<coding-challenge-nx-welcome></coding-challenge-nx-welcome>
+<div class="container">
+  <form nz-form [formGroup]="form" class="login-form" (ngSubmit)="createUser()">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your first name!">
+        <nz-input-group nzPrefixIcon="user">
+          <input
+            type="text"
+            nz-input
+            formControlName="firstName"
+            placeholder="Introduce your name"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your lastname!">
+        <nz-input-group nzPrefixIcon="user">
+          <input
+            type="text"
+            nz-input
+            formControlName="lastName"
+            placeholder="Introduce your lastname"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input a correct email!">
+        <nz-input-group nzPrefixIcon="mail">
+          <input
+            type="text"
+            nz-input
+            formControlName="email"
+            placeholder="Introduce your email"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Please input your password!">
+        <nz-input-group nzPrefixIcon="lock">
+          <input
+            type="password"
+            nz-input
+            formControlName="password"
+            placeholder="Introduce your password"
+          />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <ul>
+      <li [class.valid]="haveAtLeastOneLetter">
+        <i
+          nz-icon
+          [nzType]="'check-circle'"
+          [nzTheme]="'twotone'"
+          [nzTwotoneColor]="'#52c41a'"
+        ></i>
+        <span>Have at least one letter</span>
+      </li>
+      <li [class.valid]="haveCapitalLetters">
+        <i
+          nz-icon
+          [nzType]="'check-circle'"
+          [nzTheme]="'twotone'"
+          [nzTwotoneColor]="'#52c41a'"
+        ></i>
+        <span>Have at least one capital letter</span>
+      </li>
+      <li [class.valid]="passwordHaveCorrectLength">
+        <i
+          nz-icon
+          [nzType]="'check-circle'"
+          [nzTheme]="'twotone'"
+          [nzTwotoneColor]="'#52c41a'"
+        ></i>
+        <span>Be at least 8 characters</span>
+      </li>
+      <li [class.valid]="noPersonalInformation && passwordValue.length > 0">
+        <i
+          nz-icon
+          [nzType]="'check-circle'"
+          [nzTheme]="'twotone'"
+          [nzTwotoneColor]="'#52c41a'"
+        ></i>
+        <span>Not contain firstName or lastName</span>
+      </li>
+    </ul>
+    <button
+      nz-button
+      nzBlock
+      [nzLoading]="loading$ | async"
+      class="login-form-button login-form-margin"
+      [nzType]="'primary'"
+    >
+      Create user
+    </button>
+  </form>
+</div>

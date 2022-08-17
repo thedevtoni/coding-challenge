@@ -1,0 +1,38 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  max-width: 16.25rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1rem;
+  li {
+    display: flex;
+    align-items: center;
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+    span {
+      margin-left: 0.5rem;
+      font-size: 0.85rem;
+      color: #cecece;
+    }
+
+    &.valid {
+      span {
+        color: #212121;
+      }
+    }
+  }
+}

@@ -3,6 +3,9 @@
   "version": 2,
   "projects": {
     "coding-challenge": "apps/coding-challenge",
-    "coding-challenge-e2e": "apps/coding-challenge-e2e"
+    "coding-challenge-e2e": "apps/coding-challenge-e2e",
+    "features-users-create-user": "libs/features/users/create-user",
+    "services-users": "libs/services/users",
+    "utils": "libs/utils"
   }
 }

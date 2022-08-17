@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@coding-challenge/features/users/create-user": [
+        "libs/features/users/create-user/src/index.ts"
+      ],
+      "@coding-challenge/services/users": ["libs/services/users/src/index.ts"],
+      "@coding-challenge/utils": ["libs/utils/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

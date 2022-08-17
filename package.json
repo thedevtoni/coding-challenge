@@ -7,7 +7,12 @@
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2020 browser module main",
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "lint": "nx workspace-lint && ng lint",
+    "affected:test": "nx affected:test",
+    "affected:lint": "nx affected:lint",
+    "format": "nx format:write",
+    "format:write": "nx format:write"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +25,7 @@
     "@angular/platform-browser-dynamic": "~14.1.1",
     "@angular/router": "~14.1.1",
     "@nrwl/angular": "14.5.6",
+    "ng-zorro-antd": "^13.4.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
